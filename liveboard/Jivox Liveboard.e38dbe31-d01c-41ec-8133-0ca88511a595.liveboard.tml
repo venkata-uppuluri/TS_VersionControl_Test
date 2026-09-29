@@ -2,7 +2,7 @@ guid: e38dbe31-d01c-41ec-8133-0ca88511a595
 liveboard:
   name: Jivox Liveboard
   visualizations:
-  - id: Viz_1
+  - id: Viz_2
     answer:
       name: Last Tool of the Session
       tables:
