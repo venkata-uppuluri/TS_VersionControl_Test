@@ -1,0 +1,295 @@
+guid: e38dbe31-d01c-41ec-8133-0ca88511a595
+liveboard:
+  name: Jivox Liveboard
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Last Tool of the Session
+      tables:
+      - id: "Latest Tool by Session, Session Id, Timestamp"
+        name: "Latest Tool by Session, Session Id, Timestamp"
+        fqn: e5495931-5c3f-47ea-949d-0358e8147f43
+      formulas:
+      - id: formula_Percentage of Latest Tool by Session
+        name: Percentage of Latest Tool by Session
+        expr: "( [formula_Each Latest Tool by Session count] * 100 ) / [formula_Total count of all Latest Tool by Session]"
+        was_auto_generated: false
+      - id: formula_Each Latest Tool by Session count
+        name: Each Latest Tool by Session count
+        expr: "group_aggregate ( count ( [Latest Tool by Session] ) , query_groups ( ) , { } )"
+        was_auto_generated: false
+      - id: formula_Total count of all Latest Tool by Session
+        name: Total count of all Latest Tool by Session
+        expr: "group_aggregate ( count ( [Latest Tool by Session] ) , query_groups ( ) - { [Latest Tool by Session] } , { } )"
+        was_auto_generated: false
+      search_query: "[formula_Percentage of Latest Tool by Session] [Latest Tool by Session]"
+      answer_columns:
+      - name: Latest Tool by Session
+      - name: Percentage of Latest Tool by Session
+      table:
+        table_columns:
+        - column_id: Latest Tool by Session
+          show_headline: false
+        - column_id: Percentage of Latest Tool by Session
+          show_headline: false
+        ordered_column_ids:
+        - Latest Tool by Session
+        - Percentage of Latest Tool by Session
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"Latest Tool by Session\",\"columnProperty\": {}},{\"columnId\": \"Percentage of Latest Tool by Session\",\"columnProperty\": {}}]}"
+      chart:
+        type: ADVANCED_DONUT
+        chart_columns:
+        - column_id: Latest Tool by Session
+        - column_id: Percentage of Latest Tool by Session
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"columnProperties\": [{\"columnId\": \"Latest Tool by Session\",\"columnProperty\": {}},{\"columnId\": \"Percentage of Latest Tool by Session\",\"columnProperty\": {}},{\"columnId\": \"6194b346-59df-430e-ad82-2c15c86dfcf2\",\"columnProperty\": {}},{\"columnId\": \"97528c91-9bc0-427a-bafb-0e864de8a1b6\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"44cf6182-5a41-4a99-aa8f-759e659ab152\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Percentage of Latest Tool by Session\"],\"isOpposite\": false}},{\"id\": \"c10fc073-e955-4afb-a205-ee5af403ac13\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Latest Tool by Session\"]}}]}"
+        custom_chart_config:
+        - key: basic
+          dimensions:
+          - key: x-axis
+            axes:
+            - type: FLAT
+              column: Latest Tool by Session
+            mode: AXIS_DRIVEN
+          - key: y-axis
+            axes:
+            - type: FLAT
+              column: Percentage of Latest Tool by Session
+            mode: AXIS_DRIVEN
+        custom_visual_props: "{\"clientState\":\"\",\"axisVisualProps\":{},\"columnVisualProps\":{\"Percentage of Latest Tool by Session\":{},\"Latest Tool by Session\":{\"column-sort\":{},\"cartesian-color-map-section\":{\"cartesian-color-map\":{\"Chat Tool\":\"#2E75F0\",\"Dashboard Tool\":\"#48D1E0\",\"Profile\":\"#FCC838\",\"Search Tool\":\"#06BF7F\",\"Settings\":\"#8C62F5\"}}}},\"displayVisualProps\":{\"display\":{},\"trellis\":{\"trellis-title-show\":true,\"trellis-title-color\":\"#000000\",\"trellis-border-show\":false,\"trellis-border-color\":\"#000000\"},\"other\":{\"chart-background-color\":{\"backgroundColor\":\"#ffffff\",\"borderColor\":\"#ffffff\"},\"plotted-area-background-color\":{\"backgroundColor\":\"#ffffff\",\"borderColor\":\"#ffffff\"}}},\"dataLabelVisualProps\":{\"cartesian-data-labels\":{\"show-labels\":true},\"Percentage of Latest Tool by Session\":{\"cartesian-data-labels\":{\"cartesian-data-labels-enable\":true}}},\"legendVisualProps\":{},\"tooltipVisualProps\":{\"global-tooltip\":{\"show-tooltip\":true,\"tooltip-show-details\":true,\"tooltip-show-aggregates\":true,\"tooltipBackground\":{\"backgroundColor\":\"#1d232f\",\"borderColor\":\"#1d232f\",\"backgroundOpacity\":\"100\"},\"tooltip-column-name\":{\"size\":\"12\",\"color\":\"#ffffff\",\"style\":[]},\"tooltip-column-value\":{\"size\":\"12\",\"color\":\"#ffffff\",\"style\":[]}}}}"
+        viz_style: "{}"
+      display_mode: CHART_MODE
+      dynamic_name: Last Tool of the Session
+    viz_guid: fa6c6248-a962-45eb-a663-7dddf43f9a79
+  - id: Viz_2
+    answer:
+      name: First Tool of the Session
+      tables:
+      - id: First Tool by Session
+        name: First Tool by Session
+        fqn: d2516479-8fe5-47a7-a034-e7b5129f2e41
+      formulas:
+      - id: formula_Percentage of sessions by First Tool
+        name: Percentage of sessions by First Tool
+        expr: "( [formula_Sessions per First Tool] * 100 ) / [formula_Total sessions]"
+        was_auto_generated: false
+      - id: formula_Sessions per First Tool
+        name: Sessions per First Tool
+        expr: "group_aggregate ( unique count ( [Session Id] ) , query_groups ( ) , { } )"
+        was_auto_generated: false
+      - id: formula_Total sessions
+        name: Total sessions
+        expr: "group_aggregate ( unique count ( [Session Id] ) , query_groups ( ) - { [First Tool by Session] } , { } )"
+        was_auto_generated: false
+      search_query: "[formula_Percentage of sessions by First Tool] [First Tool by Session]"
+      answer_columns:
+      - name: First Tool by Session
+      - name: Percentage of sessions by First Tool
+      table:
+        table_columns:
+        - column_id: First Tool by Session
+          show_headline: false
+        - column_id: Percentage of sessions by First Tool
+          show_headline: false
+        ordered_column_ids:
+        - First Tool by Session
+        - Percentage of sessions by First Tool
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"First Tool by Session\",\"columnProperty\": {}},{\"columnId\": \"Percentage of sessions by First Tool\",\"columnProperty\": {}}]}"
+      chart:
+        type: ADVANCED_BAR
+        chart_columns:
+        - column_id: First Tool by Session
+        - column_id: Percentage of sessions by First Tool
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"columnProperties\": [{\"columnId\": \"First Tool by Session\",\"columnProperty\": {}},{\"columnId\": \"Percentage of sessions by First Tool\",\"columnProperty\": {}},{\"columnId\": \"f898ca53-d7b6-4689-83c3-c60f3d941e9e\",\"columnProperty\": {}},{\"columnId\": \"205b54d0-f08e-4fa1-a716-a3aadf917ad5\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"429f7843-456b-4ac1-b30b-bc5deb00cd7a\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Percentage of sessions by First Tool\"],\"isOpposite\": false}},{\"id\": \"3a4c7894-d3ff-46bc-bd34-6785c1604a19\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"First Tool by Session\"]}}]}"
+        custom_chart_config:
+        - key: basic
+          dimensions:
+          - key: y-axis
+            axes:
+            - type: FLAT
+              column: First Tool by Session
+            mode: AXIS_DRIVEN
+          - key: x-axis
+            axes:
+            - type: FLAT
+              column: Percentage of sessions by First Tool
+            mode: AXIS_DRIVEN
+          - key: slice-with-color
+            mode: AXIS_DRIVEN
+          - key: trellis-by
+            mode: AXIS_DRIVEN
+        custom_visual_props: "{}"
+        viz_style: "{}"
+      display_mode: CHART_MODE
+      dynamic_name: First Tool of the Session
+    viz_guid: eb35bde6-e659-483c-bf47-72d923794c99
+  - id: Viz_3
+    answer:
+      name: Engagement Depth
+      tables:
+      - id: Brandstore Analytics Model
+        name: Brandstore Analytics Model
+        fqn: 4d8d9c62-f483-4b05-a3e3-443837ab670a
+      formulas:
+      - id: formula_Percentage of total sessions
+        name: Percentage of total sessions
+        expr: "( unique count ( [Session Id] ) / group_aggregate ( unique count ( [Session Id] ) , { } , query_filters ( ) ) ) * 100"
+        was_auto_generated: false
+      - id: formula_tool usage category
+        name: tool usage category
+        expr: "if ( [formula_tools per session] >= 1 and [formula_tools per session] <= 3 ) then '1-3 tools' else if ( [formula_tools per session] > 3 and [formula_tools per session] <= 5 ) then '3-5 tools' else if ( [formula_tools per session] > 5 and [formula_tools per session] <= 10 ) then '5-10 tools' else if ( [formula_tools per session] > 10 ) then 'above 10 tools' else 'unknown'"
+        was_auto_generated: false
+      - id: formula_tools per session
+        name: tools per session
+        expr: "group_aggregate ( count ( [Tool Name] ) , query_groups ( ) + { [Session Id] } , query_filters ( ) )"
+        was_auto_generated: false
+      search_query: "unique count [Session Id] [formula_Percentage of total sessions] [formula_tool usage category]"
+      answer_columns:
+      - name: Percentage of total sessions
+      - name: Unique Number of Session Id
+      - name: tool usage category
+      table:
+        table_columns:
+        - column_id: Percentage of total sessions
+          show_headline: false
+        - column_id: Unique Number of Session Id
+          show_headline: false
+        - column_id: tool usage category
+          show_headline: false
+        ordered_column_ids:
+        - tool usage category
+        - Unique Number of Session Id
+        - Percentage of total sessions
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"columnProperties\": [{\"columnId\": \"tool usage category\",\"columnProperty\": {}},{\"columnId\": \"Unique Number of Session Id\",\"columnProperty\": {}},{\"columnId\": \"Percentage of total sessions\",\"columnProperty\": {}}]}"
+      chart:
+        type: ADVANCED_LINE_COLUMN
+        chart_columns:
+        - column_id: Percentage of total sessions
+        - column_id: Unique Number of Session Id
+        - column_id: tool usage category
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"},\"kpiDisplayProperties\": {\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\",\"linkChangeColorsWithAnomaly\": true}},\"columnProperties\": [{\"columnId\": \"tool usage category\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Unique Number of Session Id\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Percentage of total sessions\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"6e8d9d01-e0e6-4d38-b1e7-84e4d7e37c56\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"5eea6096-5300-4d69-8c2d-fae2b79106b1\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}}],\"axisProperties\": [{\"id\": \"4a6f6585-1088-4b0b-b713-7d3dae5322e6\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Unique Number of Session Id\"],\"isOpposite\": false}},{\"id\": \"52ed1d53-1d87-407a-8114-dada42e38cfa\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Percentage of total sessions\"],\"isOpposite\": true}},{\"id\": \"ea08c96a-227f-4948-90e4-9f9c3b0f4759\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"tool usage category\"]}}]}"
+        custom_chart_config:
+        - key: basic
+          dimensions:
+          - key: x-axis
+            axes:
+            - type: FLAT
+              column: tool usage category
+            mode: AXIS_DRIVEN
+          - key: y-axis-column
+            axes:
+            - type: MERGED
+              columns:
+              - Unique Number of Session Id
+            mode: AXIS_DRIVEN
+          - key: y-axis-line
+            axes:
+            - type: MERGED
+              columns:
+              - Percentage of total sessions
+            mode: AXIS_DRIVEN
+          - key: trellis-by
+            mode: AXIS_DRIVEN
+        custom_visual_props: "{}"
+        viz_style: "{}"
+      display_mode: CHART_MODE
+      dynamic_name: Engagement Depth
+    viz_guid: 55c2a2f6-bbf0-4d77-8143-11d7163be670
+  - id: Viz_4
+    answer:
+      name: Search_Query
+      tables:
+      - id: Search_Query_600
+        name: Search_Query_600
+        fqn: 76bb925a-820d-4104-868a-1eff867b8f04
+      search_query: "[Search_Query]"
+      answer_columns:
+      - name: Search_Query
+      table:
+        table_columns:
+        - column_id: Search_Query
+          show_headline: false
+        ordered_column_ids:
+        - Search_Query
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"widthState\": [{\"columnId\": \"Search_Query\",\"width\": 398.2079315185547}]}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Search_Query
+        axis_configs:
+        - "y":
+          - Search_Query
+        client_state: ""
+      display_mode: TABLE_MODE
+    viz_guid: 61e2cd08-1bca-44e8-a2a1-52af37cbd682
+  - id: Viz_5
+    viz_guid: 5afe6e14-9af3-468a-be63-7ace9dd44604
+    ai_tile:
+      target_agent: insight_code_runner
+      analysis_code: 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
+      template_id: text_long_form
+  - id: Viz_6
+    viz_guid: 21b2a407-eef9-4ac9-8238-dd6f9dce6a4e
+    ai_tile:
+      target_agent: insight_code_runner
+      analysis_code: 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
+      template_id: text_long_form
+  layout:
+    tiles:
+    - visualization_id: Viz_1
+      x: 0
+      "y": 0
+      height: 8
+      width: 6
+    - visualization_id: Viz_2
+      x: 6
+      "y": 0
+      height: 8
+      width: 6
+    - visualization_id: Viz_3
+      x: 0
+      "y": 8
+      height: 8
+      width: 6
+    - visualization_id: Viz_4
+      x: 6
+      "y": 8
+      height: 8
+      width: 6
+    - visualization_id: Viz_5
+      x: 0
+      "y": 16
+      height: 8
+      width: 6
+    - visualization_id: Viz_6
+      x: 6
+      "y": 16
+      height: 8
+      width: 6
+  style:
+    style_properties:
+    - name: lb_border_type
+      value: CURVED
+    - name: lb_brand_color
+      value: LBC_A
+    - name: hide_group_title
+      value: "false"
+    - name: hide_group_description
+      value: "true"
+    - name: hide_group_tile_description
+      value: "false"
+    - name: hide_tile_description
+      value: "false"
+    - name: kpi_hero_font_size
+      value: M
+    overrides:
+    - object_id: Viz_6
+      style_properties:
+      - name: tile_brand_color
+        value: TBC_E
