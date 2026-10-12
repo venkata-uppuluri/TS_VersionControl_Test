@@ -1,0 +1,73 @@
+guid: c604db82-5bec-44ae-a3be-494d9233f9db
+table:
+  name: DIM_RETAPP_STORES
+  db: RETAPP_TEJA
+  schema: PUBLIC
+  db_table: DIM_RETAPP_STORES
+  connection:
+    name: Teja_PS_Connection
+    fqn: 7aabfc1d-eb22-4785-b3e6-9b040401e556
+  columns:
+  - name: STOREID
+    db_column_name: STOREID
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: STORENAME
+    db_column_name: STORENAME
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: CITY
+    db_column_name: CITY
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: STATE
+    db_column_name: STATE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: ZIPCODE
+    db_column_name: ZIPCODE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: COUNTY
+    db_column_name: COUNTY
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: LATITUDE
+    db_column_name: LATITUDE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: LONGITUDE
+    db_column_name: LONGITUDE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: REGION
+    db_column_name: REGION
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  properties:
+    spotter_config:
+      is_spotter_enabled: false

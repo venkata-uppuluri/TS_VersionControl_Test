@@ -1,0 +1,68 @@
+guid: 28917a30-bb7e-4eb6-8ac8-c2d878954225
+answer:
+  name: Sales Weekly Custom Calendar Test
+  tables:
+  - id: SAMPLE_RETAIL_TEJA
+    name: SAMPLE_RETAIL_TEJA
+    fqn: 69da3255-7b17-4282-bad0-521a68868296
+  search_query: "[SALES] [RECORDDATE].monthly [RECORDDATE].weekly [RECORDDATE].2020 [RECORDDATE].quarterly [RECORDDATE].daily"
+  answer_columns:
+  - name: Day(RECORDDATE)
+  - name: Month(RECORDDATE)
+  - name: Quarter(RECORDDATE)
+  - name: Total SALES
+  - name: Week(RECORDDATE)
+  table:
+    table_columns:
+    - column_id: Day(RECORDDATE)
+      show_headline: false
+    - column_id: Month(RECORDDATE)
+      show_headline: false
+    - column_id: Quarter(RECORDDATE)
+      show_headline: false
+    - column_id: Total SALES
+      show_headline: false
+    - column_id: Week(RECORDDATE)
+      show_headline: false
+    ordered_column_ids:
+    - Month(RECORDDATE)
+    - Week(RECORDDATE)
+    - Quarter(RECORDDATE)
+    - Day(RECORDDATE)
+    - Total SALES
+    client_state: ""
+    client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+  chart:
+    type: ADVANCED_PIVOT_TABLE
+    chart_columns:
+    - column_id: Day(RECORDDATE)
+    - column_id: Measure names
+      type: MEASURE_NAMES
+    - column_id: Month(RECORDDATE)
+    - column_id: Quarter(RECORDDATE)
+    - column_id: Total SALES
+    - column_id: Week(RECORDDATE)
+    client_state: ""
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {\"pivotSummariesState\": {}},\"kpiDisplayProperties\": {\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\",\"linkChangeColorsWithAnomaly\": true}},\"columnProperties\": [{\"columnId\": \"Month(RECORDDATE)\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Week(RECORDDATE)\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Total SALES\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Measure names\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Measure values\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}}],\"axisProperties\": [{\"id\": \"6b9ccb1c-668a-46e5-9c28-2ab9a76197ba\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total SALES\"],\"isOpposite\": false}},{\"id\": \"dbb85282-5669-4e6c-8cfb-f78bb9ecfeee\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(RECORDDATE)\",\"Week(RECORDDATE)\"]}}]}"
+    custom_chart_config:
+    - key: basic
+      dimensions:
+      - key: rows
+        columns:
+        - Month(RECORDDATE)
+        - Week(RECORDDATE)
+        - Day(RECORDDATE)
+        mode: COLUMN_DRIVEN
+      - key: values
+        columns:
+        - Total SALES
+        mode: COLUMN_DRIVEN
+      - key: columns
+        columns:
+        - Measure names
+        mode: COLUMN_DRIVEN
+      - key: split-by-color
+        mode: COLUMN_DRIVEN
+    custom_visual_props: "{}"
+    viz_style: "{}"
+  display_mode: CHART_MODE

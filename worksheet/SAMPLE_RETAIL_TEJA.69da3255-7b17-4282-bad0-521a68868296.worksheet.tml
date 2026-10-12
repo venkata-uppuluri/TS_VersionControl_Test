@@ -1,0 +1,111 @@
+guid: 69da3255-7b17-4282-bad0-521a68868296
+model:
+  name: SAMPLE_RETAIL_TEJA
+  model_tables:
+  - name: DIM_RETAPP_PRODUCTS
+    fqn: ef78b803-8673-46e4-a2a4-8f4112809b6b
+  - name: DIM_RETAPP_STORES
+    fqn: c604db82-5bec-44ae-a3be-494d9233f9db
+  - name: FACT_RETAPP_SALES
+    fqn: 4a8cb8a1-1f47-4739-bc76-b91015797fee
+    joins:
+    - with: DIM_RETAPP_PRODUCTS
+      'on': '[FACT_RETAPP_SALES::PRODUCTID] = [DIM_RETAPP_PRODUCTS::PRODUCTID]'
+      type: LEFT_OUTER
+      cardinality: MANY_TO_ONE
+    - with: DIM_RETAPP_STORES
+      'on': '[FACT_RETAPP_SALES::STOREID] = [DIM_RETAPP_STORES::STOREID]'
+      type: LEFT_OUTER
+      cardinality: MANY_TO_ONE
+  columns:
+  - name: SALES
+    description: Column SALES from table FACT_RETAPP_SALES
+    column_id: FACT_RETAPP_SALES::SALES
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: QUANTITYPURCHASED
+    description: Column QUANTITYPURCHASED from table FACT_RETAPP_SALES
+    column_id: FACT_RETAPP_SALES::QUANTITYPURCHASED
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: ITEMPRICE
+    description: Column ITEMPRICE from table FACT_RETAPP_SALES
+    column_id: FACT_RETAPP_SALES::ITEMPRICE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+  - name: RECORDDATE
+    description: Column RECORDDATE from table FACT_RETAPP_SALES
+    column_id: FACT_RETAPP_SALES::RECORDDATE
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      calendar: Teja_Custom_Calendar_SuntoSat
+  - name: SALESID
+    description: Column SALESID from table FACT_RETAPP_SALES
+    column_id: FACT_RETAPP_SALES::SALESID
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+  - name: PRODUCTID
+    description: Column PRODUCTID from table FACT_RETAPP_SALES
+    column_id: FACT_RETAPP_SALES::PRODUCTID
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+  - name: STOREID
+    description: Column STOREID from table FACT_RETAPP_SALES
+    column_id: FACT_RETAPP_SALES::STOREID
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+  - name: PRODUCTNAME
+    description: Column PRODUCTNAME from table DIM_RETAPP_PRODUCTS
+    column_id: DIM_RETAPP_PRODUCTS::PRODUCTNAME
+    properties:
+      column_type: ATTRIBUTE
+  - name: PRODUCTTYPE
+    description: Column PRODUCTTYPE from table DIM_RETAPP_PRODUCTS
+    column_id: DIM_RETAPP_PRODUCTS::PRODUCTTYPE
+    properties:
+      column_type: ATTRIBUTE
+  - name: STORENAME
+    description: Column STORENAME from table DIM_RETAPP_STORES
+    column_id: DIM_RETAPP_STORES::STORENAME
+    properties:
+      column_type: ATTRIBUTE
+  - name: CITY
+    description: Column CITY from table DIM_RETAPP_STORES
+    column_id: DIM_RETAPP_STORES::CITY
+    properties:
+      column_type: ATTRIBUTE
+  - name: STATE
+    description: Column STATE from table DIM_RETAPP_STORES
+    column_id: DIM_RETAPP_STORES::STATE
+    properties:
+      column_type: ATTRIBUTE
+  - name: REGION
+    description: Column REGION from table DIM_RETAPP_STORES
+    column_id: DIM_RETAPP_STORES::REGION
+    properties:
+      column_type: ATTRIBUTE
+  - name: COUNTY
+    description: Column COUNTY from table DIM_RETAPP_STORES
+    column_id: DIM_RETAPP_STORES::COUNTY
+    properties:
+      column_type: ATTRIBUTE
+  - name: ZIPCODE
+    description: Column ZIPCODE from table DIM_RETAPP_STORES
+    column_id: DIM_RETAPP_STORES::ZIPCODE
+    properties:
+      column_type: ATTRIBUTE
+  properties:
+    is_bypass_rls: false
+    join_progressive: true
+    spotter_config:
+      is_spotter_enabled: false
