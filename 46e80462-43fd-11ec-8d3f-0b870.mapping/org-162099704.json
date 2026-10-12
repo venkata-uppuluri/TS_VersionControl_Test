@@ -1,6 +1,41 @@
 [ {
+  "originalGuid" : "4a8cb8a1-1f47-4739-bc76-b91015797fee",
+  "mappedGuid" : "4a8cb8a1-1f47-4739-bc76-b91015797fee",
+  "counter" : 0,
+  "additionalMapping" : { }
+}, {
+  "originalGuid" : "b80ec761-c3ed-4b07-ac82-8c56f9cb3096",
+  "mappedGuid" : "b80ec761-c3ed-4b07-ac82-8c56f9cb3096",
+  "counter" : 0,
+  "additionalMapping" : { }
+}, {
+  "originalGuid" : "a537ea6e-47de-4b15-a483-053089ab3731",
+  "mappedGuid" : "a537ea6e-47de-4b15-a483-053089ab3731",
+  "counter" : 0,
+  "additionalMapping" : { }
+}, {
+  "originalGuid" : "c604db82-5bec-44ae-a3be-494d9233f9db",
+  "mappedGuid" : "c604db82-5bec-44ae-a3be-494d9233f9db",
+  "counter" : 0,
+  "additionalMapping" : { }
+}, {
+  "originalGuid" : "69da3255-7b17-4282-bad0-521a68868296",
+  "mappedGuid" : "69da3255-7b17-4282-bad0-521a68868296",
+  "counter" : 0,
+  "additionalMapping" : { }
+}, {
+  "originalGuid" : "28917a30-bb7e-4eb6-8ac8-c2d878954225",
+  "mappedGuid" : "28917a30-bb7e-4eb6-8ac8-c2d878954225",
+  "counter" : 0,
+  "additionalMapping" : { }
+}, {
+  "originalGuid" : "ef78b803-8673-46e4-a2a4-8f4112809b6b",
+  "mappedGuid" : "ef78b803-8673-46e4-a2a4-8f4112809b6b",
+  "counter" : 0,
+  "additionalMapping" : { }
+}, {
   "originalGuid" : "ec4cec59-a7ab-4822-b565-9c207aa4a13e",
   "mappedGuid" : "ec4cec59-a7ab-4822-b565-9c207aa4a13e",
-  "counter" : 0,
+  "counter" : 1,
   "additionalMapping" : { }
 } ]
