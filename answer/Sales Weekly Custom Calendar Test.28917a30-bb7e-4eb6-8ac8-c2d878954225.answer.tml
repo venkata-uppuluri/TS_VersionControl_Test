@@ -5,7 +5,7 @@ answer:
   - id: SAMPLE_RETAIL_TEJA
     name: SAMPLE_RETAIL_TEJA
     fqn: 69da3255-7b17-4282-bad0-521a68868296
-  search_query: "[SALES] [RECORDDATE].monthly [RECORDDATE].weekly [RECORDDATE].2020 [RECORDDATE].quarterly [RECORDDATE].daily"
+  search_query: "[SALES] [RECORDDATE].monthly [RECORDDATE].weekly [RECORDDATE].2020 [RECORDDATE].quarterly [RECORDDATE].daily [city]"
   answer_columns:
   - name: Day(RECORDDATE)
   - name: Month(RECORDDATE)
