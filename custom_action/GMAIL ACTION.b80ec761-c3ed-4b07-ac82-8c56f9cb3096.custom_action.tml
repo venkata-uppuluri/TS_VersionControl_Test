@@ -1,0 +1,11 @@
+guid: b80ec761-c3ed-4b07-ac82-8c56f9cb3096
+action_object:
+  name: GMAIL ACTION
+  type: URL
+  url_action_details:
+    url: https://mail.google.com/mail/u/0/#inbox
+    reference: gmail-action
+    authentication:
+      type: NONE
+  availability: LOCAL
+  application: NONE
