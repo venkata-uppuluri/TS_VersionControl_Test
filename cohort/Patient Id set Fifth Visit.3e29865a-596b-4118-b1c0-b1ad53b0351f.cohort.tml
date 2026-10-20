@@ -1,0 +1,33 @@
+guid: 3e29865a-596b-4118-b1c0-b1ad53b0351f
+cohort:
+  name: Patient Id set Fifth Visit
+  answer:
+    tables:
+    - id: Patient_Visit_Data_Model
+      name: Patient_Visit_Data_Model
+      fqn: 888f708c-d6fc-43a7-80d6-83fc2aa777cc
+    search_query: "[Patient Id] [Completed Visit Number] = 5"
+    answer_columns:
+    - name: Patient Id
+    table:
+      table_columns:
+      - column_id: Patient Id
+        show_headline: false
+      ordered_column_ids:
+      - Patient Id
+      client_state: ""
+    display_mode: TABLE_MODE
+  owner: venkata.uppuluri@thoughtspot.com
+  worksheet:
+    id: Patient_Visit_Data_Model
+    name: Patient_Visit_Data_Model
+    fqn: 888f708c-d6fc-43a7-80d6-83fc2aa777cc
+  config:
+    cohort_type: ADVANCED
+    anchor_column_id: Patient Id
+    return_column_id: Patient Id
+    cohort_grouping_type: COLUMN_BASED
+    hide_excluded_query_values: true
+    group_excluded_query_values: Excluded values
+    pass_thru_filter:
+      accept_all: false

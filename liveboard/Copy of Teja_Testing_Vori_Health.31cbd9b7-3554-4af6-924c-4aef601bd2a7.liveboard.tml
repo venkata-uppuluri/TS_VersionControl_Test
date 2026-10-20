@@ -1,0 +1,220 @@
+guid: 31cbd9b7-3554-4af6-924c-4aef601bd2a7
+liveboard:
+  name: Copy of Teja_Testing_Vori_Health
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Count First Visit
+      tables:
+      - id: Patient_Visit_Data_Model
+        name: Patient_Visit_Data_Model
+        fqn: 888f708c-d6fc-43a7-80d6-83fc2aa777cc
+      formulas:
+      - id: formula_Count First Visit
+        name: Count First Visit
+        expr: "unique_count_if ( [Completed Visit Number] = 1 , [Patient Id]  )"
+        was_auto_generated: false
+      - id: formula_Count Fifth Visit
+        name: Count Fifth Visit
+        expr: "unique_count_if ( [Patient Id] in { [Patient Id set] } and ( [Patient Id] in { [Patient Id set] } and [Patient Id] in { [Patient Id set Fifth Visit] } ) , [Patient Id] )"
+        was_auto_generated: false
+      - id: formula_Count Third Visit
+        name: Count Third Visit
+        expr: "unique_count_if ( [Patient Id] in { [Patient Id set] } and ( [Patient Id] in { [Patient Id set] } and [Patient Id] in { [Patient Id set third visit] } ) , [Patient Id] )"
+        was_auto_generated: false
+      - id: formula_Patient_Id in Set
+        name: Patient_Id in Set
+        expr: "if ( [Patient Id] in { [Patient Id set] } ) then 'true' else 'false'"
+        was_auto_generated: false
+      - id: formula_Third Visit Row
+        name: Third Visit Row
+        expr: "count_if ( [Completed Visit Number] = 3 , [Patient Id] )"
+        was_auto_generated: false
+      - id: formula_Visitis3
+        name: Visitis3
+        expr: "if ( [Completed Visit Number] = 3 ) then true else false"
+        was_auto_generated: false
+      search_query: "[formula_Count First Visit]"
+      answer_columns:
+      - name: Count First Visit
+      table:
+        table_columns:
+        - column_id: Count First Visit
+          show_headline: false
+        ordered_column_ids:
+        - Count First Visit
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Count First Visit
+        axis_configs:
+        - "y":
+          - Count First Visit
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {\"pivotSummariesState\": {}},\"kpiDisplayProperties\": {\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\",\"linkChangeColorsWithAnomaly\": true}},\"columnProperties\": [{\"columnId\": \"Measure names\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Measure values\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Count First Visit\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}}],\"axisProperties\": [{\"id\": \"3a7caaf5-09ad-4858-b645-eff6f7186da0\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Count First Visit\"],\"isOpposite\": false}},{\"id\": \"a12b7a60-68f4-4308-8912-8cd9ad12cc75\",\"properties\": {\"axisType\": \"X\"}}]}"
+        custom_visual_props: "{\"clientState\":\"{\\\"version\\\":1,\\\"playground\\\":{\\\"version\\\":\\\"v1\\\",\\\"code\\\":{\\\"jsCodeBase64\\\":\\\"LyoqCiAqIEF2YWlsYWJsZSBDb2x1bW5zOgogKiAiQ291bnQgRmlyc3QgVmlzaXQiCiAqICJDb3VudCBUaGlyZCBWaXNpdCIKICogIkNvdW50IEZpZnRoIFZpc2l0IgogKiAiTWVhc3VyZSBuYW1lcyIgLy8gSWYgJ21lYXN1cmVWYWx1ZXMnIGlzIGVuYWJsZWQuCiAqICJNZWFzdXJlIHZhbHVlcyIgLy8gSWYgJ21lYXN1cmVWYWx1ZXMnIGlzIGVuYWJsZWQuCiAqIC0tLSBFTkQgLS0tIAogKi8KCmNvbnN0IHsKICAgIG11emUsCiAgICBnZXREYXRhRnJvbVNlYXJjaFF1ZXJ5Cn0gPSB2aXo7Cgpjb25zdCBkYXRhID0gZ2V0RGF0YUZyb21TZWFyY2hRdWVyeSgpOwoKbXV6ZS5jYW52YXMoKQoucm93cyhbIkNvdW50IEZpcnN0IFZpc2l0IiwiQ291bnQgVGhpcmQgVmlzaXQiXSkKLmNvbHVtbnMoW10pCi5kYXRhKGRhdGEpCi5tb3VudCgiI2NoYXJ0Iik7Cg\\u003d\\u003d\\\",\\\"cssCodeBase64\\\":\\\"aHRtbCwgYm9keSB7CiAgbWFyZ2luOiAwOwogIHBhZGRpbmc6IDA7CiAgd2lkdGg6IDEwMHZ3OwogIGhlaWdodDogMTAwdmg7CiAgb3ZlcmZsb3c6IGhpZGRlbjsKfQoKI2NoYXJ0IHsKICB3aWR0aDogMTAwJTsKICBoZWlnaHQ6IDEwMCU7Cn0\\u003d\\\",\\\"htmlCodeBase64\\\":\\\"PGRpdiBpZD0iY2hhcnQiPjwvZGl2Pg\\u003d\\u003d\\\"},\\\"splitSizes\\\":[55,45],\\\"editorConsoleSplitSizes\\\":[99,1]}}\",\"axisVisualProps\":{},\"columnVisualProps\":{},\"dataLabelVisualProps\":{},\"tooltipVisualProps\":{},\"legendVisualProps\":{},\"displayVisualProps\":{}}"
+        viz_style: "{}"
+      display_mode: CHART_MODE
+      dynamic_name: Count First Visit
+    viz_guid: b25aae16-0f10-462a-8b04-31ca7503cd62
+  - id: Viz_2
+    answer:
+      name: Count Third Visit
+      tables:
+      - id: Patient_Visit_Data_Model
+        name: Patient_Visit_Data_Model
+        fqn: 888f708c-d6fc-43a7-80d6-83fc2aa777cc
+      formulas:
+      - id: formula_Count Third Visit
+        name: Count Third Visit
+        expr: "unique_count_if ( [Patient Id] in { [Patient Id set] } and ( [Patient Id] in { [Patient Id set] } and [Patient Id] in { [Patient Id set third visit] } ) , [Patient Id] )"
+        was_auto_generated: false
+      - id: formula_Count Fifth Visit
+        name: Count Fifth Visit
+        expr: "unique_count_if ( [Patient Id] in { [Patient Id set] } and ( [Patient Id] in { [Patient Id set] } and [Patient Id] in { [Patient Id set Fifth Visit] } ) , [Patient Id] )"
+        was_auto_generated: false
+      - id: formula_Count First Visit
+        name: Count First Visit
+        expr: "unique_count_if ( [Completed Visit Number] = 1 , [Patient Id]  )"
+        was_auto_generated: false
+      - id: formula_Patient_Id in Set
+        name: Patient_Id in Set
+        expr: "if ( [Patient Id] in { [Patient Id set] } ) then 'true' else 'false'"
+        was_auto_generated: false
+      - id: formula_Third Visit Row
+        name: Third Visit Row
+        expr: "count_if ( [Completed Visit Number] = 3 , [Patient Id] )"
+        was_auto_generated: false
+      - id: formula_Visitis3
+        name: Visitis3
+        expr: "if ( [Completed Visit Number] = 3 ) then true else false"
+        was_auto_generated: false
+      search_query: "[formula_Count Third Visit]"
+      answer_columns:
+      - name: Count Third Visit
+      table:
+        table_columns:
+        - column_id: Count Third Visit
+          show_headline: false
+        ordered_column_ids:
+        - Count Third Visit
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Count Third Visit
+        axis_configs:
+        - "y":
+          - Count Third Visit
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {\"pivotSummariesState\": {}}},\"columnProperties\": [{\"columnId\": \"Measure names\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Measure values\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Count Third Visit\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"1e497ff8-c460-4504-a0f5-3be62a748e71\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Count Third Visit\"],\"isOpposite\": false}},{\"id\": \"36cc7ac1-d695-412c-8cfd-c79c0dfa308d\",\"properties\": {\"axisType\": \"X\"}}]}"
+        custom_visual_props: "{\"clientState\":\"{\\\"version\\\":1,\\\"playground\\\":{\\\"version\\\":\\\"v1\\\",\\\"code\\\":{\\\"jsCodeBase64\\\":\\\"LyoqCiAqIEF2YWlsYWJsZSBDb2x1bW5zOgogKiAiQ291bnQgRmlyc3QgVmlzaXQiCiAqICJDb3VudCBUaGlyZCBWaXNpdCIKICogIkNvdW50IEZpZnRoIFZpc2l0IgogKiAiTWVhc3VyZSBuYW1lcyIgLy8gSWYgJ21lYXN1cmVWYWx1ZXMnIGlzIGVuYWJsZWQuCiAqICJNZWFzdXJlIHZhbHVlcyIgLy8gSWYgJ21lYXN1cmVWYWx1ZXMnIGlzIGVuYWJsZWQuCiAqIC0tLSBFTkQgLS0tIAogKi8KCmNvbnN0IHsKICAgIG11emUsCiAgICBnZXREYXRhRnJvbVNlYXJjaFF1ZXJ5Cn0gPSB2aXo7Cgpjb25zdCBkYXRhID0gZ2V0RGF0YUZyb21TZWFyY2hRdWVyeSgpOwoKbXV6ZS5jYW52YXMoKQoucm93cyhbIkNvdW50IEZpcnN0IFZpc2l0IiwiQ291bnQgVGhpcmQgVmlzaXQiXSkKLmNvbHVtbnMoW10pCi5kYXRhKGRhdGEpCi5tb3VudCgiI2NoYXJ0Iik7Cg\\u003d\\u003d\\\",\\\"cssCodeBase64\\\":\\\"aHRtbCwgYm9keSB7CiAgbWFyZ2luOiAwOwogIHBhZGRpbmc6IDA7CiAgd2lkdGg6IDEwMHZ3OwogIGhlaWdodDogMTAwdmg7CiAgb3ZlcmZsb3c6IGhpZGRlbjsKfQoKI2NoYXJ0IHsKICB3aWR0aDogMTAwJTsKICBoZWlnaHQ6IDEwMCU7Cn0\\u003d\\\",\\\"htmlCodeBase64\\\":\\\"PGRpdiBpZD0iY2hhcnQiPjwvZGl2Pg\\u003d\\u003d\\\"},\\\"splitSizes\\\":[55,45],\\\"editorConsoleSplitSizes\\\":[99,1]}}\",\"axisVisualProps\":{},\"columnVisualProps\":{},\"dataLabelVisualProps\":{},\"tooltipVisualProps\":{},\"legendVisualProps\":{},\"displayVisualProps\":{}}"
+        viz_style: "{}"
+      display_mode: CHART_MODE
+      dynamic_name: Count Third Visit
+    viz_guid: 300055f3-9613-4cac-a733-48a1397cb58e
+  - id: Viz_3
+    answer:
+      name: Count Fifth Visit
+      tables:
+      - id: Patient_Visit_Data_Model
+        name: Patient_Visit_Data_Model
+        fqn: 888f708c-d6fc-43a7-80d6-83fc2aa777cc
+      formulas:
+      - id: formula_Count Fifth Visit
+        name: Count Fifth Visit
+        expr: "unique_count_if ( [Patient Id] in { [Patient Id set] } and ( [Patient Id] in { [Patient Id set] } and [Patient Id] in { [Patient Id set Fifth Visit] } ) , [Patient Id] )"
+        was_auto_generated: false
+      - id: formula_Count First Visit
+        name: Count First Visit
+        expr: "unique_count_if ( [Completed Visit Number] = 1 , [Patient Id]  )"
+        was_auto_generated: false
+      - id: formula_Count Third Visit
+        name: Count Third Visit
+        expr: "unique_count_if ( [Patient Id] in { [Patient Id set] } and ( [Patient Id] in { [Patient Id set] } and [Patient Id] in { [Patient Id set third visit] } ) , [Patient Id] )"
+        was_auto_generated: false
+      - id: formula_Patient_Id in Set
+        name: Patient_Id in Set
+        expr: "if ( [Patient Id] in { [Patient Id set] } ) then 'true' else 'false'"
+        was_auto_generated: false
+      - id: formula_Third Visit Row
+        name: Third Visit Row
+        expr: "count_if ( [Completed Visit Number] = 3 , [Patient Id] )"
+        was_auto_generated: false
+      - id: formula_Visitis3
+        name: Visitis3
+        expr: "if ( [Completed Visit Number] = 3 ) then true else false"
+        was_auto_generated: false
+      search_query: "[formula_Count Fifth Visit]"
+      answer_columns:
+      - name: Count Fifth Visit
+      table:
+        table_columns:
+        - column_id: Count Fifth Visit
+          show_headline: false
+        ordered_column_ids:
+        - Count Fifth Visit
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: KPI
+        chart_columns:
+        - column_id: Count Fifth Visit
+        axis_configs:
+        - "y":
+          - Count Fifth Visit
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {\"pivotSummariesState\": {}}},\"columnProperties\": [{\"columnId\": \"Measure names\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Measure values\",\"columnProperty\": {\"kpiColumnProperties\": {\"showAbbreviatedPreviousDate\": false,\"abbreviatedPreviousDate\": \"\",\"handleNullData\": \"ZERO\",\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Count Fifth Visit\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"dcde433e-e263-459c-8d5f-ee4d8bb9852a\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Count Fifth Visit\"],\"isOpposite\": false}},{\"id\": \"1e8da707-304a-488c-873d-4bc147391c69\",\"properties\": {\"axisType\": \"X\"}}]}"
+        custom_visual_props: "{\"clientState\":\"{\\\"version\\\":1,\\\"playground\\\":{\\\"version\\\":\\\"v1\\\",\\\"code\\\":{\\\"jsCodeBase64\\\":\\\"LyoqCiAqIEF2YWlsYWJsZSBDb2x1bW5zOgogKiAiQ291bnQgRmlyc3QgVmlzaXQiCiAqICJDb3VudCBUaGlyZCBWaXNpdCIKICogIkNvdW50IEZpZnRoIFZpc2l0IgogKiAiTWVhc3VyZSBuYW1lcyIgLy8gSWYgJ21lYXN1cmVWYWx1ZXMnIGlzIGVuYWJsZWQuCiAqICJNZWFzdXJlIHZhbHVlcyIgLy8gSWYgJ21lYXN1cmVWYWx1ZXMnIGlzIGVuYWJsZWQuCiAqIC0tLSBFTkQgLS0tIAogKi8KCmNvbnN0IHsKICAgIG11emUsCiAgICBnZXREYXRhRnJvbVNlYXJjaFF1ZXJ5Cn0gPSB2aXo7Cgpjb25zdCBkYXRhID0gZ2V0RGF0YUZyb21TZWFyY2hRdWVyeSgpOwoKbXV6ZS5jYW52YXMoKQoucm93cyhbIkNvdW50IEZpcnN0IFZpc2l0IiwiQ291bnQgVGhpcmQgVmlzaXQiXSkKLmNvbHVtbnMoW10pCi5kYXRhKGRhdGEpCi5tb3VudCgiI2NoYXJ0Iik7Cg\\u003d\\u003d\\\",\\\"cssCodeBase64\\\":\\\"aHRtbCwgYm9keSB7CiAgbWFyZ2luOiAwOwogIHBhZGRpbmc6IDA7CiAgd2lkdGg6IDEwMHZ3OwogIGhlaWdodDogMTAwdmg7CiAgb3ZlcmZsb3c6IGhpZGRlbjsKfQoKI2NoYXJ0IHsKICB3aWR0aDogMTAwJTsKICBoZWlnaHQ6IDEwMCU7Cn0\\u003d\\\",\\\"htmlCodeBase64\\\":\\\"PGRpdiBpZD0iY2hhcnQiPjwvZGl2Pg\\u003d\\u003d\\\"},\\\"splitSizes\\\":[55,45],\\\"editorConsoleSplitSizes\\\":[99,1]}}\",\"axisVisualProps\":{},\"columnVisualProps\":{},\"dataLabelVisualProps\":{},\"tooltipVisualProps\":{},\"legendVisualProps\":{},\"displayVisualProps\":{}}"
+        viz_style: "{}"
+      display_mode: CHART_MODE
+      dynamic_name: Count Fifth Visit
+    viz_guid: dd099b61-b79a-4a7f-a64e-403d9df765fa
+  filters:
+  - column:
+    - Provider Full Name
+    oper: in
+    values:
+    - Dr. Brown
+    is_mandatory: false
+    is_single_value: false
+    display_name: ""
+  layout:
+    tiles:
+    - visualization_id: Viz_1
+      x: 0
+      "y": 0
+      height: 2
+      width: 2
+    - visualization_id: Viz_2
+      x: 2
+      "y": 0
+      height: 2
+      width: 2
+    - visualization_id: Viz_3
+      x: 4
+      "y": 0
+      height: 2
+      width: 2
+  ordered_chips:
+  - name: Provider Full Name
+    type: FILTER
+  style:
+    style_properties:
+    - name: lb_border_type
+      value: CURVED
+    - name: lb_brand_color
+      value: LBC_A
+    - name: hide_group_title
+      value: "false"
+    - name: hide_group_description
+      value: "true"
+    - name: hide_group_tile_description
+      value: "false"
+    - name: hide_tile_description
+      value: "false"
+    - name: kpi_hero_font_size
+      value: M

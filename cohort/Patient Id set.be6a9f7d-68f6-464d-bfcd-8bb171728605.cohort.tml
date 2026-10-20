@@ -1,0 +1,39 @@
+guid: be6a9f7d-68f6-464d-bfcd-8bb171728605
+cohort:
+  name: Patient Id set
+  answer:
+    tables:
+    - id: Patient_Visit_Data_Model
+      name: Patient_Visit_Data_Model
+      fqn: 888f708c-d6fc-43a7-80d6-83fc2aa777cc
+    search_query: "[Completed Visit Number] [Patient Id] [Completed Visit Number] = 1 sort by [Patient Id]"
+    answer_columns:
+    - name: Completed Visit Number
+    - name: Patient Id
+      sort_info:
+        category: ALPHA
+    table:
+      table_columns:
+      - column_id: Completed Visit Number
+        show_headline: false
+      - column_id: Patient Id
+        show_headline: false
+      ordered_column_ids:
+      - Patient Id
+      - Completed Visit Number
+      client_state: ""
+    display_mode: TABLE_MODE
+  owner: venkata.uppuluri@thoughtspot.com
+  worksheet:
+    id: Patient_Visit_Data_Model
+    name: Patient_Visit_Data_Model
+    fqn: 888f708c-d6fc-43a7-80d6-83fc2aa777cc
+  config:
+    cohort_type: ADVANCED
+    anchor_column_id: Patient Id
+    return_column_id: Patient Id
+    cohort_grouping_type: COLUMN_BASED
+    hide_excluded_query_values: true
+    group_excluded_query_values: Excluded values
+    pass_thru_filter:
+      accept_all: true
