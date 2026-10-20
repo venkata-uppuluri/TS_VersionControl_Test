@@ -197,8 +197,8 @@ liveboard:
     - visualization_id: Viz_3
       x: 4
       "y": 0
-      height: 2
-      width: 2
+      height: 10
+      width: 10
   ordered_chips:
   - name: Provider Full Name
     type: FILTER
